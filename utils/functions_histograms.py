@@ -696,7 +696,7 @@ def histograms_cardiac(
 
 #%%
 
-def polar_histograms_respiration_cycle(
+def polar_histograms_respiration(
     df_clean,
     resp_index_df,
     event_index_df,
@@ -1064,5 +1064,6 @@ def polar_histograms_respiration_cycle(
     plt.savefig(filename, bbox_inches="tight")
     plt.show()
     print(f"Figure {filename} saved!")
+
 
     return circ_stats_df, events_df
