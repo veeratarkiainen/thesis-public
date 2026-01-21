@@ -320,7 +320,7 @@ print(p_stats)
 
 print("Saccade onsets in respiratory cycle...")
 
-saccade_resp_stats_polar, resp_saccade_phase_df = polar_histograms_respiration_cycle(df_clean_signals, resp_index_df, saccade_index_df, "saccade_onset", "Sacc_vel")
+saccade_resp_stats_polar, resp_saccade_phase_df = polar_histograms_respiration(df_clean_signals, resp_index_df, saccade_index_df, "saccade_onset", "Sacc_vel")
 
 exploded_hist = saccade_resp_stats_polar.explode("P_value")
 
@@ -338,7 +338,7 @@ print(p_stats)
 
 print("Blink onsets in respiratory cycle...")
 
-blink_resp_stats_polar, resp_blink_phase_df  = polar_histograms_respiration_cycle(df_clean_signals, resp_index_df, blink_index_df, "blink_onset", "Blink")
+blink_resp_stats_polar, resp_blink_phase_df  = polar_histograms_respiration(df_clean_signals, resp_index_df, blink_index_df, "blink_onset", "Blink")
 
 exploded_hist = blink_resp_stats_polar.explode("P_value")
 
@@ -371,3 +371,4 @@ perform_watson_williams(blink_resp_stats_polar, label="Blink_respiratory")
 
 perform_friedman_test(saccade_resp_stats_polar, label = "Saccade-respiratory")
 perform_friedman_test(blink_resp_stats_polar, label = "Blink-respiratory")
+
