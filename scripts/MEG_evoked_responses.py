@@ -34,9 +34,10 @@ ica_eog_inds = {
 
 folder_out = "/m/nbe/scratch/artefact_sync/tarkiav1/"
 
-# Dirs
+# Dirs, NOTE: directories are hardcoded to environment specific file paths from the original analysis setup 
 out_dir = "Evoked_responses/epochs_and_evokeds"
 out_figs = "Evoked_responses/evoked_figures"
+out_fig_dir = "Thesis/Figures/Evokeds"
 
 subjects = ["pilot01", "pilot02", "pilot03", "pilot04"]
 
@@ -368,9 +369,6 @@ for pilot in subjects:
 
 # %% Plot evoked responses
 
-out_fig_dir = "Thesis/Figures/Evokeds"
-os.makedirs(out_fig_dir, exist_ok=True)
-
 # define better times?
 times_dict = {
     "pilot01": [-0.05, 0.0, 0.104, 0.212],
@@ -600,4 +598,5 @@ for pilot in subjects:
     print(f"{pilot} global PVE={pve:.2f}%")
 
     del e_left_orig, e_right_orig, e_left_ica, e_right_ica, e_combined_orig, e_combined_ica
+
     gc.collect()
