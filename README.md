@@ -21,6 +21,14 @@ The raw datasets are confidential and stored in a secure environment. MEG proces
 
 ---
 
+## Figure descriptions 
+
+Cardiac grand average histograms: Cardiac phase is defined relative to the R-peak (0 and $2\pi$), with $\pi$ corresponding to T-wave offset. The grey bin indicates the mode and the red arrow shows the mean direction. Whiskers denote 95\% bootstrap confidence intervals. The dashed vertical line marks the end of the T-wave (end of systole)
+
+Respiratory grand average histograms: Respiratory phase is defined relative to the exhalation and inhalation onsets (respectively, 0 and $\pi$) The grey bin indicates the mode and the red arrow shows the mean direction.
+
+---
+
 ## Paths and running the code (note on hard-coded paths)
 
 Some scripts contain **environment-specific, hard-coded file paths** from the original analysis setup (e.g., Triton scratch directories). When running the code in another environment, update the path variables defined at the top of the scripts (e.g., `data_folder`, `folder_out`, `subjects_dir`) to point to your local directories.
@@ -75,5 +83,6 @@ This repository implements an end-to-end analysis workflow with two main compone
 - Implemented **event detection and selection** with quality control and reproducible parameters (e.g., saccade detection by an adaptable velocity-based algorithm)
 - Applied **statistical testing** (time-domain, phase-domain + circular statistics) to assess synchronization effects and significance  
 - Produced **clear visual outputs** (phase distributions, sensor/source-level MEG responses, RMS/PVE summaries)
+
 
 
