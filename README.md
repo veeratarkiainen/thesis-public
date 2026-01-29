@@ -1,16 +1,16 @@
 # Eye-movement synchronization to cardiac and respiratory cycles (ECG/EOG/RESP/MEG)
 
-Master’s thesis project investigating potential synchronization between gaze events (saccades, blinks) and physiological rhythms (cardiac and respiratory cycles) using ECG/EOG/respiration data, with an additional MEG case study.
+Master’s thesis project investigating internal synchronization between gaze events (saccades, blinks) and physiological rhythms (cardiac and respiratory cycles) using ECG/EOG/respiration data, with an additional MEG case study quantifying cardiac artifact contribution to MEG sensor-level evoked responses and source estimates by independent component analysis (ICA) and removal of cardiac independent components (ICs).
 
 In the MEG part, the work evaluates cardiac artifact contribution to saccade-locked activity at:
 
-- **Sensor level:** evoked responses and RMS/PVE comparisons pre/post cardiac IC removal  
-- **Source level:** source estimates (MNE) and region-wise comparison between cerebellar and posterior-cortical activity (RMS/PVE) with ICA-based cardiac artifact removal  
+- **Sensor level:** evoked responses and RMS/PVE comparisons pre/post cardiac IC removal during saccadic eye movements  
+- **Source level:** source estimates (MNE) and region-wise comparison between estimated cerebellar and posterior-cortical activity (RMS/PVE)
 
 --- 
 
-- **Focus:** healthcare time-series analysis, signal preprocessing, event detection, circular statistics, statistical testing, MEG sensor & source-level analysis, independent component analysis (ICA)  
-- **Stack:** Python, NumPy, pandas, SciPy, MNE-Python, matplotlib, Git  
+- **Focus:** healthcare time-series analysis, synchronization analysis, physiological signals, signal preprocessing, event detection, circular statistics, statistical testing, MEG sensor & source-level analysis, independent component analysis (ICA), cardiac artifact  
+- **Stack:** Python, NumPy, pandas, SciPy, neurokit2, MNE-Python, matplotlib, Git  
 - **Repo owner:** Veera Tarkiainen  
 
 ---
@@ -64,15 +64,16 @@ This repository implements an end-to-end analysis workflow with two main compone
 6. **Source-level responses**
    - Source estimation (MNE inverse solution) using an occipital-restricted sensor space  
    - Source estimates masked to cerebellar segmentation  
-   - Comparison of cerebellar vs posterior-cortical activity (RMS/PVE)  
+   - Comparison of source estimates of cerebellar vs posterior-cortical activity (RMS/PVE)  
 7. **Visualization & reporting**
 
 ---
 
 ## Key contributions (high level)
 
-- Built an **end-to-end Python pipeline** for physiological time-series analysis (ECG/EOG/RESP) and an MEG workflow from sensor to source level analysis
+- Built an **end-to-end Python pipeline** for physiological time-series analysis (ECG/EOG/RESP) and an MEG workflow from sensor to source-level analysis
 - Implemented **event detection and selection** with quality control and reproducible parameters (e.g., saccade detection by an adaptable velocity-based algorithm)
 - Applied **statistical testing** (time-domain, phase-domain + circular statistics) to assess synchronization effects and significance  
 - Produced **clear visual outputs** (phase distributions, sensor/source-level MEG responses, RMS/PVE summaries)
+
 
