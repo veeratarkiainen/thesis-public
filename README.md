@@ -1,6 +1,6 @@
 # Eye-movement synchronization to cardiac and respiratory cycles (ECG/EOG/RESP/MEG)
 
-Master’s thesis project investigating internal synchronization between gaze events (saccades, blinks) and physiological rhythms (cardiac and respiratory cycles) using ECG/EOG/respiration data, with an additional MEG case study quantifying cardiac artifact contribution to MEG sensor-level evoked responses and source estimates by independent component analysis (ICA) and removal of cardiac independent components (ICs).
+Master’s thesis project investigating internal synchronization between gaze events (saccades, blinks) and physiological rhythms (cardiac and respiratory cycles) using ECG/EOG/respiration data with an additional MEG case study quantifying cardiac artifact contribution to MEG sensor-level evoked responses and source estimates by independent component analysis (ICA) and removal of cardiac independent components (ICs).
 
 In the MEG part, the work evaluates cardiac artifact contribution to saccade-locked activity at:
 
@@ -10,7 +10,7 @@ In the MEG part, the work evaluates cardiac artifact contribution to saccade-loc
 --- 
 
 - **Focus:** healthcare time-series analysis, synchronization analysis, physiological signals, signal preprocessing, event detection, circular statistics, statistical testing, MEG sensor & source-level analysis, independent component analysis (ICA), cardiac artifact  
-- **Stack:** Python, NumPy, pandas, SciPy, neurokit2, MNE-Python, matplotlib, Git  
+- **Stack:** Python, NumPy, pandas, SciPy, NeuroKit2, MNE-Python, matplotlib, Git  
 - **Repo owner:** Veera Tarkiainen  
 
 ---
@@ -23,7 +23,7 @@ The raw datasets are confidential and stored in a secure environment. MEG proces
 
 ## Figure descriptions 
 
-Cardiac grand average histograms: Cardiac phase is defined relative to the R-peak (0 and $2\pi$), with $\pi$ corresponding to T-wave offset. The grey bin indicates the mode and the red arrow shows the mean direction. Whiskers denote 95\% bootstrap confidence intervals. The dashed vertical line marks the end of the T-wave (end of systole)
+Cardiac grand average histograms: Cardiac phase is defined relative to the R-peak (0 and $2\pi$), with $\pi$ corresponding to T-wave offset. The grey bin indicates the mode and the red arrow shows the mean direction. Whiskers denote 95\% bootstrap confidence intervals. The dashed vertical line marks the end of the T-wave (end of systole).
 
 Respiratory grand average histograms: Respiratory phase is defined relative to the exhalation and inhalation onsets (respectively, 0 and $\pi$) The grey bin indicates the mode and the red arrow shows the mean direction.
 
@@ -45,7 +45,7 @@ This repository implements an end-to-end analysis workflow with two main compone
 ### 1) Physiological signals (ECG/EOG/RESP)
 
 1. **Data loading**  
-2. **Preprocessing & quality checks** (filtering, signal-quality checks)  
+2. **Preprocessing & quality checks** (filtering, signal quality checks)  
 3. **Event detection & selection** (e.g., saccade/blink detection from EOG)  
 4. **Feature extraction**
    - Cardiac timing: R-peak alignment and T-wave offset detection (RTc-based)  
@@ -67,7 +67,7 @@ This repository implements an end-to-end analysis workflow with two main compone
 4. **Independent Component Analysis (ICA)**
    - Identification of cardiac IC(s)  
 5. **Sensor-level responses**
-   - Evoked responses for: (a) original data, (b) ICA-cleaned data, (c) cardiac IC contribution  
+   - Evoked responses for: (a) original data, (b) ICA-cleaned data, (c) cardiac IC 
    - RMS and PVE comparisons before/after cardiac IC removal  
 6. **Source-level responses**
    - Source estimation (MNE inverse solution) using an occipital-restricted sensor space  
@@ -77,12 +77,13 @@ This repository implements an end-to-end analysis workflow with two main compone
 
 ---
 
-## Key contributions (high level)
+## Key contributions (high-level)
 
-- Built an **end-to-end Python pipeline** for physiological time-series analysis (ECG/EOG/RESP) and an MEG workflow from sensor to source-level analysis
+- Built two **end-to-end Python pipelines** for physiological time-series synchronization analysis (ECG/EOG/RESP) and analysis of cardiac artifcat contribution to MEG evoked responses and source estimates
 - Implemented **event detection and selection** with quality control and reproducible parameters (e.g., saccade detection by an adaptable velocity-based algorithm)
 - Applied **statistical testing** (time-domain, phase-domain + circular statistics) to assess synchronization effects and significance  
 - Produced **clear visual outputs** (phase distributions, sensor/source-level MEG responses, RMS/PVE summaries)
+
 
 
 
