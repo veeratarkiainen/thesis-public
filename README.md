@@ -1,4 +1,4 @@
-# Eye-movement synchronization to cardiac and respiratory cycles (ECG/EOG/RESP/MEG)
+# Eye movement synchronization to cardiac and respiratory cycles (ECG/EOG/RESP/MEG)
 
 Master’s thesis project investigating internal synchronization between gaze events (saccades, blinks) and physiological rhythms (cardiac and respiratory cycles) using ECG/EOG/respiration data with an additional MEG case study quantifying cardiac artifact contribution to MEG sensor-level evoked responses and source estimates by independent component analysis (ICA) and removal of cardiac independent components (ICs).
 
@@ -83,6 +83,7 @@ This repository implements an end-to-end analysis workflow with two main compone
 - Implemented **event detection and selection** with quality control and reproducible parameters (e.g., saccade detection by an adaptable velocity-based algorithm)
 - Applied **statistical testing** (time-domain, phase-domain + circular statistics) to assess synchronization effects and significance  
 - Produced **clear visual outputs** (phase distributions, sensor/source-level MEG responses, RMS/PVE summaries)
+
 
 
 
